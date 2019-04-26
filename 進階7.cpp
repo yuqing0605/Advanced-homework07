@@ -1,0 +1,49 @@
+#include<stdio.h>
+#include<stdlib.h>
+#define MAX 100
+
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+
+int main(void){
+
+	char str[MAX];
+	char word,word_max;
+	int word_num[2]={0,0};  
+
+	int str_num=0;          
+	int a,b;              
+	int same_word=1;        
+
+	printf("請輸入小於100的字串:");
+	scanf("%s",&str);
+
+	for(a=0;a<99;a++){     
+
+		if(str[a]=='\0'){
+			break;}
+		str_num+=1;	}
+		
+	for(b=0;b<str_num-1;b++){
+	 
+		if(str[b]==str[b+1]){ 
+		same_word+=1; 
+		word_num[1]=same_word;
+		word=str[b];
+		
+		if(word_num[1]>word_num[0]){
+		word_num[0]=word_num[1];
+		word_max=word;}
+		continue;}
+		
+		else{same_word=1;
+		word_num[1]=0;}}	
+		
+	printf("最多出現的字元為:\n");
+	
+	for(a=0;a<word_num[0];a++){
+		printf("%c",word_max);}
+	
+	printf("\n");
+    return 0;
+	system("pause");
+}
